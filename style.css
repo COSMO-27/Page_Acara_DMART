@@ -3,6 +3,7 @@
     padding:0;
     box-sizing:border-box;
     font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
 }
 
 body{
@@ -55,6 +56,19 @@ h1{
     margin-bottom:30px;
 }
 
+.youtube-container{
+    width:100%;
+    max-width:1000px;
+    margin:40px auto;
+}
+
+.youtube-container iframe{
+    width:100%;
+    aspect-ratio:16/9;
+    border:none;
+    border-radius:20px;
+}
+
 .links{
     display:flex;
     flex-direction:column;
@@ -92,4 +106,20 @@ h1{
     font-size: 20px;
     margin-bottom: 40px;
     margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .container{
+        width:100%;
+        padding:20px;
+    }
+
+    .hero-image{
+        margin: -20px -20px 0 -20px;
+    }
+
+    .hero-image img{
+        width:100%;
+        border-radius:0;
+    }
 }
