@@ -8,17 +8,11 @@
 }
 
 body{
-    background:linear-gradient(
-        135deg,
-        #111827,
-        #1f2937
-    );
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     background: white;
-    font-family: monospace;
 }
 
 .container{
@@ -29,7 +23,9 @@ body{
 }
 
 .back{
-    width:1000px;
+    width:100%;
+    max-width:1000px;
+    height:auto;
     border-radius:20px 20px 0 0;
     margin:0 auto;
 }
@@ -76,16 +72,17 @@ body{
     border-radius:20px;
 }
 
-.links{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
-.btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn img{
@@ -99,50 +96,57 @@ body{
         width:100%;   
         border-radius:0 0 0 0;
     }
-    .links{ 
-        gap:20px; 
-        width:85%;     
-        margin:0 auto;    
+     .links {
+        width: 95%;
+        margin: 0 auto;
+        gap: 20px;
     }
-    .btn img{ 
-        max-width:100%;    
+
+    .btn img {
+        width: 100%;
+        max-width: 700px;
     }
+
     .video_wrapper{ 
-        max-width:75%; 
+        max-width:90%;      /* diperbesar dari 75% */
         margin:20px auto 30px;   
     }
-    .Topeng_kanan{ width:35%; }
-    .Topeng_kiri{ width:35%; }
+    .Topeng_kanan{ width:48%; }   /* diperbesar dari 35% */
+    .Topeng_kiri{ width:48%; }    /* diperbesar dari 35% */
     .youtube-container{ 
-        max-width:90%; 
+        max-width:100%;     /* diperbesar dari 90% */
         margin:20px auto 30px;   
     }
 }
+
 /* ===== HP KECIL ===== */
 @media (max-width: 480px){
-    .back{
-        width:100%;   
-        border-radius:0 0 0 0;
-    }
     .video_wrapper{
+        max-width:95%;
         margin:24px auto 50px;
+    }
+
+    .links {
+        width: 95%;
+    }
+
+    .btn img {
+        width: 85%;
+        max-width: none;
     }
 
     .Topeng_kanan,
     .Topeng_kiri{
-        width:24%;
+        width:30%;      /* diperbesar dari 24% */
     }
 
     .Topeng_kanan{
-        top:-10%;
-        right:-4%;
+        top:-15%;
+        right:-10%;
     }
 
     .Topeng_kiri{
-        bottom:-6%;
-        left:-4%;
+        bottom:-18%;
+        left:-8%;
     }
 }
-
-
-
