@@ -9,10 +9,8 @@
 
 body{
     min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
     background: white;
+    margin:0;
 }
 
 .container{
@@ -20,133 +18,470 @@ body{
     max-width:1500px;
     margin:0 auto;
     text-align:center;
+    overflow:hidden;
 }
 
 .back{
-    width:100%;
+    width:150%;
     max-width:1000px;
     height:auto;
     border-radius:20px 20px 0 0;
     margin:0 auto;
 }
 
-/* Wrapper pembungkus video + topeng */
-.video_wrapper{
-    position:relative;
-    width:100%;        /* ganti dari 850px ke 100% */
-    max-width:850px;    /* 850px jadi BATAS MAKSIMUM, bukan ukuran fixed */
-    margin:40px auto 80px;
-    overflow-x: visible;
+
+.video_wrapper_hero {
+    --card-width: 650px;
+
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+
+    margin: 40px auto 120px;
+    overflow: visible;
+}
+
+
+.video_wrapper {
+    --card-width: 650px;
+
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto 80px;
+
+    overflow: visible;
+}
+
+.registration-link {
+    display: block;
+    position: relative;
+
+    width: var(--card-width);
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.registration-link .images-wrapper {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    aspect-ratio: 16 / 9;
 }
 
 .Topeng_kanan{
-    width:35%;
+    width:30%;
     height:auto;
     transform:rotate(-25deg) scaleX(-1);
     position:absolute;
     top:-30%;      /* di atas pojok kanan card, bukan 150% */
-    right:-10%;
+    right:-4%;
     z-index:10;
 }
 
 .Topeng_kiri{
-    width:35%;
+    width:30%;
     height:auto;
     transform:rotate(-25deg);
     position:absolute;
-    bottom:-15%;   /* di bawah pojok kiri card */
-    left:-13%;
+    bottom:-20%;   /* di bawah pojok kiri card */
+    left:-5%;
     z-index:10;
 }
 
-.youtube-container{
-    width:100%;
-    max-width: 750px;
+/* ============================= */
+/* INFORMASI RELAWAN              */
+/* ============================= */
+
+.relawan_wrapper {
+    --relawan-width: 650px;
+    --relawan-height: 150px;
+
+    position: relative;
+    width: min(var(--relawan-width), 100%);
+    height: var(--relawan-height);
+    margin: -70px auto -70px;
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+
+/* LINK */
+.relawan_wrapper .registration-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+}
+
+
+/* FOTO */
+.relawan_wrapper .images-wrapper-second {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 8px solid #ED2024;
+    z-index: 2;
+}
+
+
+/* GAMBAR */
+.relawan_wrapper .images-wrapper-second img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* RECTANGLE */
+.relawan_wrapper .rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 43%;
+    min-height: 70px;
+    background-color: #ED2024;
+    border: none;
+    border-radius: 20px 20px 0 0;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 20%,
+        0 100%
+    );
+
+    z-index: 5;
+    pointer-events: none;
+}
+
+
+/* JUDUL */
+.relawan_wrapper .hero-title {
+    position: absolute;
+    top: 7%;
+    left: 7%;
+    width: 86%;
+    font-size: clamp(20px, 6vw, 40px);
+    line-height: 1;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* selesai INFORMASI */
+
+.images-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    aspect-ratio: 16 / 9;
     margin: 40px auto 80px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 8px solid #ED2024;
 }
 
-.youtube-container iframe{
-    width:100%;
-    aspect-ratio:16/9;
-    border:none;
-    border-radius:20px;
+.images-wrapper img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    opacity: 0;
+    transition: opacity 0.8s ease;
 }
 
-.links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+.hero-title {
+    position: absolute;
+
+    top: 50px;
+    left: 35px;
+    font-family: "Inter", sans-serif;
+    overflow: hidden;
+
+    font-size: 65px;
+    font-weight: 800;
+
+    letter-spacing: -3px;
+    line-height: 1;
+
+    color: white;
+
+    -webkit-text-stroke: 10px #FF0707;
+    paint-order: stroke fill;
+
+    white-space: nowrap;
+
+    z-index: 10;
 }
 
-.btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero-title span {
+    display: block;
+    text-align: left;
+    overflow: hidden;
 }
 
-.btn img{
-    width:100%;
-    max-width:550px;
+.hero-title .sub-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: white;
+    -webkit-text-stroke: 5px #FF0707;
+    paint-order: stroke fill;
+}
+
+.rectangle {
+    position: absolute;
+    width: 650px;
+    height: 150px;
+    background-color:#ED2024;
+    border: 8px solid #ED2024;
+    z-index: 5;
+    border-radius: 20px 0 0 0;
+
+    clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 20%,
+    0 100%
+    );
+}
+
+.images-wrapper img.active {
+    opacity: 1;
 }
 
 /* ===== MODE HP ===== */
-@media (max-width: 768px){
-    .back{
-        width:100%;   
-        border-radius:0 0 0 0;
-    }
-     .links {
-        width: 95%;
-        margin: 0 auto;
-        gap: 20px;
+@media (max-width: 768px) {
+
+    .video_wrapper_hero {
+        max-width: 90%;
+        margin: 20px auto 30px;
     }
 
-    .btn img {
+    .back {
         width: 100%;
-        max-width: 700px;
+        border-radius: 0 0 0 0;
     }
 
-    .video_wrapper{ 
-        max-width:90%;      /* diperbesar dari 75% */
-        margin:20px auto 30px;   
+    .images-wrapper {
+        max-width: 90%;
+        margin: 20px auto 30px;
     }
-    .Topeng_kanan{ width:48%; }   /* diperbesar dari 35% */
-    .Topeng_kiri{ width:48%; }    /* diperbesar dari 35% */
-    .youtube-container{ 
-        max-width:100%;     /* diperbesar dari 90% */
-        margin:20px auto 30px;   
+
+    .Topeng_kanan {
+        width: 48%;
+    }
+
+    .Topeng_kiri {
+        width: 48%;
+    }
+
+    .youtube-container {
+        max-width: 100%;
+        margin: 20px auto 30px;
+    }
+
+
+    /* RECTANGLE */
+    .rectangle {
+        width: 90%;
+        height: 100px;
+
+        left: 5%;
+
+        border: 5px solid #ED2024;
+        border-radius: 15px 0 0 0;
+
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 20%,
+            0 100%
+        );
+    }
+
+    .hero-title {
+        top: 30px;
+        left: 5%;
+
+        font-size: 45px;
+        letter-spacing: -2px;
+        line-height: 1;
+
+        -webkit-text-stroke: 7px #FF0707;
+    }
+
+    .hero-title span {
+        text-align: left;
+    }
+
+    .hero-title .sub-title {
+        font-size: 24px;
+        font-weight: 600;
+
+        margin-top: 8px;
+
+        -webkit-text-stroke: 4px #FF0707;
+    }
+
+     .relawan_wrapper {
+        --relawan-width: 600px;
+        --relawan-height: 130px;
+
+        width: calc(100% - 40px);
+        height: var(--relawan-height);
+
+        margin: -50px auto -50px;
+        padding-top: 0;
+    }
+
+    .relawan_wrapper .images-wrapper-second {
+        border-width: 6px;
+        border-radius: 16px;
+    }
+
+    .relawan_wrapper .rectangle {
+        height: 45%;
+        min-height: 60px;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .relawan_wrapper .hero-title {
+        top: 8%;
+        left: 7%;
+        width: 86%;
+
+        font-size: clamp(18px, 6vw, 32px);
+        line-height: 1;
     }
 }
 
+
 /* ===== HP KECIL ===== */
-@media (max-width: 480px){
-    .video_wrapper{
-        max-width:95%;
-        margin:24px auto 50px;
+@media (max-width: 480px) {
+
+
+    .back {
+        width: 100%;
+        margin-top: 0;
+        display: block;
+        border-radius: 0;
     }
 
-    .links {
-        width: 95%;
+    .container {
+        padding-top: 0;
+        margin-top: 0;
     }
 
-    .btn img {
-        width: 85%;
-        max-width: none;
+
+    .images-wrapper {
+        max-width: 95%;
+        margin: 24px auto 50px;
     }
 
     .Topeng_kanan,
-    .Topeng_kiri{
-        width:30%;      /* diperbesar dari 24% */
+    .Topeng_kiri {
+        width: 35%;
     }
 
-    .Topeng_kanan{
-        top:-15%;
-        right:-10%;
+    .Topeng_kanan {
+        top: -15%;
+        right: -10%;
     }
 
-    .Topeng_kiri{
-        bottom:-18%;
-        left:-8%;
+    .Topeng_kiri {
+        top: 50%;
+        left: -10%;
+    }
+
+
+    /* RECTANGLE */
+    .rectangle {
+        width: 95%;
+        height: 80px;
+
+        left: 2%;
+
+        border: 4px solid #ED2024;
+        border-radius: 12px 0 0 0;
+
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 20%,
+            0 100%
+        );
+    }
+    .hero-title {
+        top: 20px;
+        left: 5%;
+
+        font-size: 32px;
+        letter-spacing: -1.5px;
+        line-height: 1;
+
+        -webkit-text-stroke: 5px #FF0707;
+    }
+
+    .hero-title span {
+        text-align: left;
+    }
+
+    .hero-title .sub-title {
+        font-size: 17px;
+        font-weight: 600;
+
+        margin-top: 1px;
+
+        -webkit-text-stroke: 3px #FF0707;
+    }
+
+    .relawan_wrapper {
+        --relawan-width: 100%;
+        --relawan-height: 105px;
+
+        width: calc(100% - 24px);
+        height: var(--relawan-height);
+
+        margin: -10px auto -60px;
+    }
+
+    .relawan_wrapper .images-wrapper-second {
+        border-width: 5px;
+        border-radius: 14px;
+    }
+
+    .relawan_wrapper .rectangle {
+        height: 46%;
+        min-height: 50px;
+
+        border-radius: 14px 14px 0 0;
+    }
+
+    .relawan_wrapper .hero-title {
+        top: 9%;
+        left: 7%;
+        width: 86%;
+
+        font-size: clamp(16px, 7vw, 26px);
+        line-height: 1.05;
     }
 }
