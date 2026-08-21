@@ -358,6 +358,15 @@ body{
         -webkit-text-stroke: 4px #ED2024;
     }
 
+
+    .hero-title .sub-title-small {
+        font-size: 40px;
+        font-weight: 800;
+
+        margin-top: 8px;
+
+        -webkit-text-stroke: 7px #ED2024;
+
      .relawan_wrapper {
         --relawan-width: 600px;
         --relawan-height: 130px;
@@ -450,7 +459,7 @@ body{
         top: 20px;
         left: 5%;
 
-        font-size: 32px;
+        font-size: 15px;
         letter-spacing: -1.5px;
         line-height: 1;
 
@@ -461,6 +470,15 @@ body{
         text-align: left;
     }
 
+    .hero-title .title {
+        font-size: 30px;
+        font-weight: 800;
+
+        margin-top: 1px;
+
+        -webkit-text-stroke: 3px #ED2024;
+    }
+
     .hero-title .sub-title {
         font-size: 17px;
         font-weight: 600;
@@ -468,6 +486,15 @@ body{
         margin-top: 1px;
 
         -webkit-text-stroke: 3px #ED2024;
+    }
+
+    .hero-title .sub-title-small {
+        font-size: 30px;
+        font-weight: 800;
+
+        margin-top: 1px;
+
+        -webkit-text-stroke: 5px #ED2024;
     }
 
     .relawan_wrapper {
@@ -500,4 +527,5 @@ body{
         font-size: clamp(16px, 7vw, 26px);
         line-height: 1.05;
     }
+}
 }
