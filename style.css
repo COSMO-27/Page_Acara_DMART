@@ -221,7 +221,7 @@ body{
 
     color: white;
 
-    -webkit-text-stroke: 10px #FF0707;
+    -webkit-text-stroke: 10px #ED2024;
     paint-order: stroke fill;
 
     white-space: nowrap;
@@ -240,7 +240,7 @@ body{
     font-weight: 600;
     margin-top: 1px;
     color: white;
-    -webkit-text-stroke: 5px #FF0707;
+    -webkit-text-stroke: 5px #ED2024;
     paint-order: stroke fill;
 }
 
@@ -323,7 +323,7 @@ body{
         letter-spacing: -2px;
         line-height: 1;
 
-        -webkit-text-stroke: 7px #FF0707;
+        -webkit-text-stroke: 7px #ED2024;
     }
 
     .hero-title span {
@@ -336,7 +336,7 @@ body{
 
         margin-top: 8px;
 
-        -webkit-text-stroke: 4px #FF0707;
+        -webkit-text-stroke: 4px #ED2024;
     }
 
      .relawan_wrapper {
@@ -435,7 +435,7 @@ body{
         letter-spacing: -1.5px;
         line-height: 1;
 
-        -webkit-text-stroke: 5px #FF0707;
+        -webkit-text-stroke: 5px #ED2024;
     }
 
     .hero-title span {
@@ -448,7 +448,7 @@ body{
 
         margin-top: 1px;
 
-        -webkit-text-stroke: 3px #FF0707;
+        -webkit-text-stroke: 3px #ED2024;
     }
 
     .relawan_wrapper {
