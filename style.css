@@ -235,6 +235,16 @@ body{
     overflow: hidden;
 }
 
+.hero-title .title {
+    font-size: 55px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1;
+    color: white;
+    -webkit-text-stroke: 10px #ED2024;
+    paint-order: stroke fill;
+}
+
 .hero-title .sub-title {
     font-size: 30px;
     font-weight: 600;
