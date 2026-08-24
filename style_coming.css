@@ -1,0 +1,463 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background: white;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#coming-soon {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+}
+
+#countdown {
+    font-size: 5em;
+    font-weight: bold;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.logo img {
+    width: 400px;
+    height: auto;
+}
+
+.logo .harmoni {
+    width: 175px;
+    height: auto;
+}
+
+.video_wrapper_hero {
+    --card-width: 650px;
+
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+
+    margin: 40px auto 30px;
+    overflow: visible;
+}
+
+.rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 43%;
+    min-height: 70px;
+    background-color: #ED2024;
+    border: none;
+    border-radius: 20px 20px 0 0;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 20%,
+        0 100%
+    );
+
+    z-index: 5;
+    pointer-events: none;
+}
+
+.video_wrapper_hero {
+    --card-width: 350px;
+
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+
+    margin: 40px auto 35px;
+    overflow: visible;
+}
+
+.registration-link {
+    display: block;
+    position: relative;
+
+    width: var(--card-width);
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.registration-link .images-wrapper {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    aspect-ratio: 16 / 9;
+}
+
+.Topeng_kanan{
+    width:30%;
+    height:auto;
+    transform:rotate(-25deg) scaleX(-1);
+    position:absolute;
+    top:-25%;      /* di atas pojok kanan card, bukan 150% */
+    right:-13%;
+    z-index:10;
+}
+
+.Topeng_kiri{
+    width:30%;
+    height:auto;
+    transform:rotate(-25deg);
+    position:absolute;
+    bottom:-20%;   /* di bawah pojok kiri card */
+    left:-13%;
+    z-index:10;
+}
+
+.hero-title {
+    position: absolute;
+
+    top: 25px;
+    left: 35px;
+    font-family: "Inter", sans-serif;
+    overflow: hidden;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    letter-spacing: -3px;
+    line-height: 1;
+
+    color: white;
+
+    -webkit-text-stroke: 10px #ED2024;
+    paint-order: stroke fill;
+
+    white-space: nowrap;
+
+    z-index: 10;
+}
+
+.hero-title span {
+    display: block;
+    text-align: left;
+    overflow: hidden;
+}
+
+.hero-title .title {
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1;
+    color: white;
+    -webkit-text-stroke: 10px #ED2024;
+    paint-order: stroke fill;
+}
+
+.rectangle {
+    position: absolute;
+    width: 350px;
+    height: 50px;
+    background-color:#ED2024;
+    border: 8px solid #ED2024;
+    z-index: 5;
+    border-radius: 20px 0 0 0;
+
+    clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 20%,
+    0 100%
+    );
+}
+
+.images-wrapper img.active {
+    opacity: 1;
+}
+
+.images-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    aspect-ratio: 16 / 9;
+    margin: 40px auto 80px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 8px solid #ED2024;
+}
+
+.images-wrapper video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================================= */
+/* MODE MOBILE */
+/* ================================= */
+
+@media (max-width: 768px) {
+
+    #coming-soon {
+        margin-top: 15px;
+        padding: 0 15px;
+    }
+
+    #coming-soon h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    #coming-soon p {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    #countdown {
+        font-size: 3.5em;
+        margin-top: 10px;
+    }
+
+
+    /* ============================= */
+    /* LOGO */
+    /* ============================= */
+
+    .logo {
+        width: 100%;
+        gap: 5px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .logo img {
+        width: 280px;
+        max-width: 85%;
+        height: auto;
+    }
+
+    .logo .harmoni {
+        width: 130px;
+        max-width: 50%;
+    }
+
+
+    /* ============================= */
+    /* VIDEO */
+    /* ============================= */
+
+    .video_wrapper_hero {
+        --card-width: 90%;
+
+        width: 100%;
+        max-width: 350px;
+
+        margin: 25px auto 20px;
+    }
+
+    .registration-link {
+        width: var(--card-width);
+        max-width: 100%;
+    }
+
+    .registration-link .images-wrapper {
+        width: 100%;
+        margin: 0;
+    }
+
+    .images-wrapper {
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+
+        border-width: 5px;
+        border-radius: 15px;
+    }
+
+
+    /* ============================= */
+    /* TOPENG */
+    /* ============================= */
+
+    .Topeng_kanan {
+        width: 35%;
+
+        top: -20%;
+        right: -12%;
+    }
+
+    .Topeng_kiri {
+        width: 35%;
+
+        bottom: -18%;
+        left: -12%;
+    }
+
+
+    /* ============================= */
+    /* JUDUL VIDEO */
+    /* ============================= */
+
+    .hero-title {
+        top: 18px;
+        left: 25px;
+
+        font-size: 12px;
+        letter-spacing: -1px;
+
+        -webkit-text-stroke: 5px #ED2024;
+    }
+
+    .hero-title .title {
+        font-size: 28px;
+        letter-spacing: -1.5px;
+
+        -webkit-text-stroke: 5px #ED2024;
+    }
+
+
+    /* ============================= */
+    /* RECTANGLE */
+    /* ============================= */
+
+    .rectangle {
+        width: 100%;
+        height: 50px;
+
+        border-width: 5px;
+        border-radius: 15px 0 0 0;
+    }
+}
+
+
+/* ================================= */
+/* HP KECIL */
+/* ================================= */
+
+@media (max-width: 480px) {
+
+    #coming-soon {
+        margin-top: 10px;
+        padding: 0 12px;
+    }
+
+    #coming-soon h1 {
+        font-size: 23px;
+    }
+
+    #coming-soon p {
+        font-size: 14px;
+    }
+
+    #countdown {
+        font-size: 2.8em;
+        margin-top: 8px;
+    }
+
+
+    /* LOGO */
+
+    .logo {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .logo img {
+        width: 220px;
+        max-width: 80%;
+    }
+
+    .logo .harmoni {
+        width: 110px;
+    }
+
+
+    /* VIDEO */
+
+    .video_wrapper_hero {
+        max-width: 220px;
+        margin: 20px auto 15px;
+    }
+
+    .registration-link {
+        width: 90%;
+    }
+
+    .images-wrapper {
+        border-width: 4px;
+        border-radius: 12px;
+    }
+
+
+    /* TOPENG */
+
+    .Topeng_kanan {
+        width: 28%;
+        top: -25%;
+        right: -10%;
+    }
+
+    .Topeng_kiri {
+        width: 28%;
+        bottom: -25%;
+        left: -10%;
+    }
+
+
+    /* JUDUL */
+
+    .hero-title {
+        top: 15px;
+        left: 20px;
+
+        -webkit-text-stroke: 4px #ED2024;
+    }
+
+    .hero-title .title {
+        font-size: 20px;
+
+        -webkit-text-stroke: 4px #ED2024;
+    }
+
+
+    /* RECTANGLE */
+
+    .rectangle {
+        height: 8px;
+        border-width: 4px;
+        border-radius: 12px 0 0 0;
+    }
+}
